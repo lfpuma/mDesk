@@ -1,7 +1,7 @@
-// export const base_url =
-// 'https://portlr-bookings-rest-test.azurewebsites.net/api'; // Test
+export const base_url =
+'https://portlr-bookings-rest-test.azurewebsites.net/api'; // Test
 
-export const base_url = 'https://portlr-bookings-rest.azurewebsites.net/api'; // Product
+// export const base_url = 'https://portlr-bookings-rest.azurewebsites.net/api'; // Product
 
 export const router = {
   currentUser: '/Admin/Permissions/CurrentUser',
@@ -15,4 +15,5 @@ export const router = {
   checkIn: '/CheckIn',
   image: '/Map',
   myTeam: '/MyTeam',
+  checkinInfo: '/Reservations/GetCheckinInfo',
 };

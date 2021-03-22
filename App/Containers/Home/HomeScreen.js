@@ -278,32 +278,6 @@ class HomeScreen extends Component {
               <Text style={styles.subViewText}>Make Reservation</Text>
             </TouchableOpacity>
           </View>
-          {/* <View style={styles.listView}>
-            <TouchableOpacity
-              style={styles.subView}
-              onPress={() => NavigationService.navigate('CheckIn')}>
-              <View style={styles.subViewIconView}>
-                <Image
-                  source={Images.ic_awesome_calendar_check}
-                  style={styles.subViewIcon}
-                  resizeMode={'contain'}
-                />
-              </View>
-              <Text style={styles.subViewText}>Check-In</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.subView}
-              onPress={() => NavigationService.navigate('QuickCheck')}>
-              <View style={styles.subViewIconView}>
-                <Image
-                  source={Images.ic_awesome_qrcode}
-                  style={styles.subViewIcon}
-                  resizeMode={'contain'}
-                />
-              </View>
-              <Text style={styles.subViewText}>Quick Check-In</Text>
-            </TouchableOpacity>
-          </View> */}
           <View style={styles.listView}>
             <TouchableOpacity
               style={styles.subView}
@@ -342,6 +316,25 @@ class HomeScreen extends Component {
               </View>
               <Text style={styles.subViewText}>Settings</Text>
             </TouchableOpacity> */}
+          </View>
+
+          <View style={styles.listView}>
+            <View style={[styles.subView, {backgroundColor: 'transparent'}]} />
+            <TouchableOpacity
+              style={styles.subView}
+              onPress={() => {
+                this.props.actions.updateQrCodeSeatId(null);
+                NavigationService.navigate('QuickCheck');
+              }}>
+              <View style={styles.subViewIconView}>
+                <Image
+                  source={Images.ic_awesome_qrcode}
+                  style={styles.subViewIcon}
+                  resizeMode={'contain'}
+                />
+              </View>
+              <Text style={styles.subViewText}>Scan & Book</Text>
+            </TouchableOpacity>
           </View>
 
           {/* <View style={styles.listView}>
@@ -612,6 +605,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateMyReservation: () => {
       dispatch(userActions.updateMyReservation());
+    },
+    updateQrCodeSeatId: (seatId) => {
+      dispatch(userActions.updateQrCodeSeatId(seatId));
     },
   },
 });

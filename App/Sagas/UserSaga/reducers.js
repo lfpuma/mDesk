@@ -15,6 +15,7 @@ const initialState = {
   isRefresh: false,
   isLoading: false,
   isRefreshToken: false,
+  qrCodeSeatId: null,
 };
 
 // eslint-disable-next-line no-undef
@@ -40,6 +41,9 @@ export default UserReducer = (state = initialState, action) => {
     // My Team
     case actions.UPDATE_MY_TEAM_LIST_SUCCESS:
       return {...state, myTeamList: action.myTeamList, isRefresh: false};
+    // QR Code
+    case actions.UPDATE_QR_CODE_SEAT_ID:
+      return {...state, qrCodeSeatId: action.seatId};
     case actions.UPDATE_MY_TEAM_LIST_ERROR:
       return {...state, error: action.error, isRefresh: false};
     case actions.UPDATE_REFRESH_STATUS:

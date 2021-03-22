@@ -62,6 +62,12 @@ async function getLocations(searchString) {
   return api.get(router.locations);
 }
 
+async function getCheckInInfo(seatId) {
+  const bearerToken = await getBearToken();
+  api.setHeader('Authorization', bearerToken);
+  return api.get(`${router.checkinInfo}?seatId=${seatId}`);
+}
+
 async function getFacilities() {
   const bearerToken = await getBearToken();
   api.setHeader('Authorization', bearerToken);
@@ -141,6 +147,12 @@ async function checkInAtHome(dates) {
     query = {Dates: dates};
   }
   return api.post(`${router.reservations}/AtHome`, query);
+}
+
+async function quickCheckIn(data) {
+  const bearerToken = await getBearToken();
+  api.setHeader('Authorization', bearerToken);
+  return api.post(`${router.reservations}/QuickCheckIn`, data);
 }
 
 async function checkInReservation(reservationId) {
@@ -276,4 +288,6 @@ export const apiManager = {
   updateGuest,
   getLunches,
   getSeats,
+  getCheckInInfo,
+  quickCheckIn,
 };

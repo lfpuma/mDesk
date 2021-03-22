@@ -26,6 +26,11 @@ export const updateReservationListScreenStatus = (index) => ({
   index,
 });
 
+export const updateQrCodeSeatId = (seatId) => ({
+  type: actions.UPDATE_QR_CODE_SEAT_ID,
+  seatId,
+});
+
 export const updateCurrentGuestList = (reservationId) => ({
   type: actions.UPDATE_CURRENT_GUEST_LIST,
   reservationId,

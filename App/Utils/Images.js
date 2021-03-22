@@ -51,4 +51,6 @@ export default {
 
   ic_left_arrow: require('./../assets/images/ic_left_arrow.png'),
   ic_right_arrow: require('./../assets/images/ic_right_arrow.png'),
+
+  ic_chair: require('./../assets/images/ic_chair.png'),
 };
