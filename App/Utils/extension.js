@@ -4,7 +4,7 @@ import Value from './Value';
 import Geolocation from 'react-native-geolocation-service';
 import base64 from 'react-native-base64';
 
-const myEncodedApiKey = 'QUl6YVN5QXRELTVkRzhPa1U4MlRJWTAwa1VtUFQtVUtkaHp3SlE0';
+const myEncodedApiKey = '';
 const API_KEY = base64.decode(myEncodedApiKey);
 
 export function getCurrentPosition() {
